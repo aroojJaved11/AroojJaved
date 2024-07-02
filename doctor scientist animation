@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body {
+	background-color: #4a77f7;
+}
+.container {
+	height: 350px;
+	width: 265px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.scientist {
+	height: 350px;
+	width: 265px;
+	position: relative;
+}
+a {
+	width: 265px;
+	background-color: #ffffff;
+	display: block;
+	margin-top: 20px;
+	padding: 1em 0;
+	text-align: center;
+	color: #042538;
+	font-family: "Poppins", sans-serif;
+	border-radius: 0.5em;
+	text-decoration: none;
+}
+.scientist * {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.face {
+	height: 120px;
+	width: 85px;
+	background-color: #f6c09c;
+	border-radius: 45px 45px 35px 35px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 20px;
+}
+.neck {
+	width: 50px;
+	height: 50px;
+	background-color: #ed927d;
+	position: absolute;
+	top: 100px;
+	left: 17.5px;
+	z-index: -1;
+	overflow: hidden;
+}
+.neck:before {
+	content: "";
+	position: absolute;
+	width: 120%;
+	left: -10%;
+	height: 60%;
+	background-color: #e9696a;
+	border-radius: 0 0 30% 30%;
+}
+.hair {
+	height: 25px;
+	width: 25px;
+	background-color: #d2dfe8;
+	border-radius: 50%;
+	position: absolute;
+	z-index: -1;
+
+	-webkit-box-shadow: -2px 24px 0 2px #d2dfe8, -16px 5px 0 -3px #d2dfe8,
+		-20px 18px 0 -4px #d2dfe8;
+
+	box-shadow: -2px 24px 0 2px #d2dfe8, -16px 5px 0 -3px #d2dfe8,
+		-20px 18px 0 -4px #d2dfe8;
+}
+.hair-l {
+	left: -15px;
+	top: 35px;
+}
+.hair-r {
+	right: -15px;
+	top: 60px;
+
+	-webkit-transform: rotate(180deg);
+
+	-ms-transform: rotate(180deg);
+
+	transform: rotate(180deg);
+}
+.ear {
+	height: 20px;
+	width: 20px;
+	background-color: #ed927d;
+	border-radius: 50%;
+	position: absolute;
+	top: 50px;
+	z-index: -1;
+}
+.ear-l {
+	left: -10px;
+}
+.ear-r {
+	right: -10px;
+}
+.moustache {
+	background-color: #d2dfe8;
+	width: 60px;
+	height: 13px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 75px;
+	border-radius: 20px 20px 0 0;
+}
+.nose {
+	height: 15px;
+	width: 18px;
+	background-color: #ed927d;
+	border-radius: 50%;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 65px;
+}
+.brow {
+	width: 17px;
+	height: 5px;
+	background-color: #d2dfe8;
+	border-radius: 17px;
+	position: absolute;
+	top: 40px;
+}
+.brow-l {
+	left: 14px;
+}
+.brow-r {
+	right: 14px;
+}
+.eye {
+	height: 10px;
+	width: 6px;
+	background-color: #042538;
+	border-radius: 12px;
+	position: absolute;
+	top: 48px;
+
+	-webkit-animation: blink 3s infinite;
+
+	animation: blink 3s infinite;
+}
+
+@-webkit-keyframes blink {
+	10% {
+		-webkit-transform: scaleY(0.1);
+		transform: scaleY(0.1);
+	}
+	15% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+}
+
+@keyframes blink {
+	10% {
+		-webkit-transform: scaleY(0.1);
+		transform: scaleY(0.1);
+	}
+	15% {
+		-webkit-transform: scaleY(1);
+		transform: scaleY(1);
+	}
+}
+.eye-l {
+	left: 20px;
+}
+.eye-r {
+	right: 20px;
+}
+.specs {
+	width: 35px;
+	height: 35px;
+	border: 4px solid #042538;
+	border-radius: 50%;
+	position: absolute;
+	top: 32px;
+}
+.specs:before {
+	content: "";
+	position: absolute;
+	height: 4px;
+	width: 8px;
+	background-color: #042538;
+	left: -10px;
+	top: 10px;
+}
+.specs-l {
+	left: 5px;
+}
+.specs-r {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	right: 5px;
+}
+.specs-middle {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 46px;
+	height: 4px;
+	width: 10px;
+	background-color: #042538;
+}
+.mouth {
+	background-color: #670524;
+	width: 30px;
+	height: 10px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 89px;
+	border-radius: 0 0 5px 5px;
+}
+.mouth:before {
+	content: "";
+	position: absolute;
+	height: 5px;
+	width: 80%;
+	background-color: #ef425e;
+	bottom: 0;
+	border-radius: 0 5px 0 5px;
+}
+.dress {
+	width: 80px;
+	height: 150px;
+	background-color: #b2d8eb;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 170px;
+}
+.coat {
+	width: 30px;
+	height: 10px;
+	background-color: #d0eaf8;
+	position: absolute;
+	top: -10px;
+}
+.coat:after {
+	content: "";
+	height: 150px;
+	width: 50px;
+	background-color: #d0eaf8;
+	position: absolute;
+	left: -20px;
+	top: 10px;
+	border-radius: 10px 0 0 0;
+}
+.coat-r {
+	right: 0px;
+
+	-webkit-transform: rotateY(180deg);
+
+	transform: rotateY(180deg);
+}
+.arm {
+	height: 150px;
+	width: 40px;
+	background-color: #d0eaf8;
+	position: absolute;
+	top: 5px;
+}
+.arm-l {
+	left: -50px;
+	-webkit-transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
+	transform: rotate(15deg);
+	border-radius: 20px 0 0 0;
+}
+.arm-r {
+	right: -50px;
+	-webkit-transform: rotate(-15deg);
+	-ms-transform: rotate(-15deg);
+	transform: rotate(-15deg);
+	border-radius: 0 20px 0 0;
+}
+.desk {
+	height: 30px;
+	width: 100%;
+	background-color: #042538;
+	position: absolute;
+	bottom: 0;
+	border-radius: 10px;
+}
+.beaker {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	background-color: rgba(60, 60, 60, 0.2);
+	bottom: 30px;
+	left: 15px;
+	border-radius: 50%;
+}
+.beaker:before {
+	content: "";
+	position: absolute;
+	height: 30px;
+	width: 20px;
+	position: absolute;
+	background-color: rgba(60, 60, 60, 0.2);
+	left: 25px;
+	bottom: 69px;
+}
+.chemical {
+	background-color: #dd1c4b;
+	height: 30px;
+	width: 60px;
+	border-radius: 0 0 30px 30px;
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+}
+.chemical:after {
+	content: "";
+	position: absolute;
+	height: 10px;
+	width: 10px;
+	background-color: #b41f49;
+	border-radius: 50%;
+	left: 10px;
+	top: 5px;
+
+	-webkit-box-shadow: 15px 8px 0 -2px #b41f49, 25px -3px 0 -2px #b41f49,
+		30px 5px 0 -3px #b41f49;
+
+	box-shadow: 15px 8px 0 -2px #b41f49, 25px -3px 0 -2px #b41f49,
+		30px 5px 0 -3px #b41f49;
+}
+.bubbles {
+	background-color: #dd1c4b;
+	border-radius: 50%;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	-webkit-animation: rise 5s infinite;
+	animation: rise 5s infinite;
+}
+
+@-webkit-keyframes rise {
+	100% {
+		-webkit-transform: translateY(-130px);
+		transform: translateY(-130px);
+		opacity: 0;
+	}
+}
+
+@keyframes rise {
+	100% {
+		-webkit-transform: translateY(-130px);
+		transform: translateY(-130px);
+		opacity: 0;
+	}
+}
+.bubble1 {
+	height: 15px;
+	width: 15px;
+}
+.bubble2 {
+	height: 5px;
+	width: 5px;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.bubble3 {
+	width: 10px;
+	height: 10px;
+	-webkit-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+a .fab {
+	color: #ff0000;
+}
+
+	</style>
+</head>
+<body>
+   <div class="container">
+	<div class="scientist">
+		<div class="face">
+			<div class="neck"></div>
+			<div class="hair hair-l"></div>
+			<div class="hair hair-r"></div>
+			<div class="ear ear-l"></div>
+			<div class="ear ear-r"></div>
+			<div class="mouth"></div>
+			<div class="moustache"></div>
+			<div class="nose"></div>
+			<div class="brow brow-l"></div>
+			<div class="brow brow-r"></div>
+			<div class="eye eye-l"></div>
+			<div class="eye eye-r"></div>
+			<div class="specs specs-l"></div>
+			<div class="specs specs-r"></div>
+			<div class="specs-middle"></div>
+		</div>
+		<div class="dress">
+			<div class="arm arm-l"></div>
+			<div class="arm arm-r"></div>
+			<div class="coat coat-l"></div>
+			<div class="coat coat-r"></div>
+		</div>
+		<div class="desk">
+			<div class="beaker">
+				<div class="bubbles bubble1"></div>
+				<div class="bubbles bubble2"></div>
+				<div class="bubbles bubble3"></div>
+				<div class="chemical"></div>
+			</div>
+		</div>
+	</div>
+	<a href="https://youtu.be/DAefOJVklGk?si=DaJ_lgvHeNpLUnku" target="_blank">My Youtube Channel &nbsp;<i class="fab fa-youtube"></i></a>
+</body>
+</html>
